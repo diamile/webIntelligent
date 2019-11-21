@@ -80,7 +80,14 @@
             @endif
 
             <div class="content">
-               
+                <div class="title m-b-md">
+                    Bienvenu sur
+               </div>
+   
+           <div class="title m-b-md">
+               <img src="images/logo.png" width="500" height="150"/>
+           </div>
+
             </div>
         </div>
     </body>
