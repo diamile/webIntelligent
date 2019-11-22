@@ -4,7 +4,7 @@
         </ul>
 
         <ul class="list-group">
-                <li class="list-group-item"><a href="{{route('AdminUser.create')}}"><i class="fa fa-user-plus" aria-hidden="true"></i> Création d'utilisateurs</a></li> 
+                <li class="list-group-item"><a href="{{route('user_data.create')}}"><i class="fa fa-user-plus" aria-hidden="true"></i> Création d'utilisateurs</a></li> 
         </ul>
     </aside>
     

@@ -2,6 +2,11 @@
 
 use Illuminate\Database\Seeder;
 
+/*
+    |-------------------------------------------------------------------------------------------------------
+    | J'appel mon UsersTableSeeder avec la fonction call afin d'enregisrer mes données dans la base de donnée
+    |-------------------------------------------------------------------------------------------------------
+   */
 class DatabaseSeeder extends Seeder
 {
     /**

@@ -10,7 +10,11 @@
                 <div class="panel panel-default">
                     
                     <div class="panel-body">
-
+                       
+                            <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+                                    
+                                    <h3 class="text-center">Modification des données personnelles</h3>       
+                            </div>
 
                         <div class="col-md-12 card text-white bg-primary mb-3">
                                

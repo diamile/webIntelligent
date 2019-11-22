@@ -4,6 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+/*
+    |---------------------------------------------------
+    | Création de ma table users et creation des champs
+    |---------------------------------------------------
+   */
 class CreateUsersTable extends Migration
 {
     /**
@@ -37,6 +42,12 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+
+     /*
+    |-----------------------------------------------------
+    | Fonction qui sera appelée quand on fait un roolback
+    |-----------------------------------------------------
+   */
     public function down()
     {
         Schema::dropIfExists('users');

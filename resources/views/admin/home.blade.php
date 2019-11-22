@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+  {{--page qui affiche la page d'accueil coté administrateur--}}
+  
     <article class="container">
         <section class="row">
 

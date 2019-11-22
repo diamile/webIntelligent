@@ -2,6 +2,12 @@
 
 use Illuminate\Database\Seeder;
 
+
+/*
+    |------------------------------------------------------------------------------------------------------------
+    | Création de mon  UsersTableSeeder  qui me permet mon admninistrateur est quelque utilisateurs via les factory
+    |------------------------------------------------------------------------------------------------------------
+   */
 class UsersTableSeeder extends Seeder
 {
     /**

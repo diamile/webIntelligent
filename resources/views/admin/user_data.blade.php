@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+{{--page qui permet de mofifier les données de l'utilisateur--}}
 @section('content')
     <article class="container PersonnalData">
         <section class="row">
@@ -10,6 +11,11 @@
                 <div class="panel panel-default">
                     
                     <div class="panel-body">
+
+                            <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+                                    
+                                    <h3 class="text-center">Modification des  données</h3>       
+                           </div>
 
 
                         <div class="col-md-12 card text-white bg-primary mb-3">

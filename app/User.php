@@ -35,7 +35,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+  /*
+    |----------------------------------------------------------------------------------------------------------------
+    | creation d'une fonction qui me permet de verifier si l'utilisateur connecté est un administrateur ou un client
+    |-----------------------------------------------------------------------------------------------------------------
+   */
+    
     public function isAdmin(){
 
         if($this->is_admin == 1){
