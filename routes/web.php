@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('client','FrontController@index')->name('client');
 
 Route::resource('client','FrontController');
+
+Route::resource('user_data', 'UpdateUserDataController');
+

@@ -15,7 +15,15 @@
                                 {{ Session::get('flash_message') }}
                             </div>
                         @endif
+
+                        @foreach($users as $user)
+                       
+
+                          @endforeach
                         <section class="container">
+                                <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+                                        <h3 class="text-center">Bonjour {{$user->name}} voici vos donnée personnelles </h3>        
+                        </div>
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
