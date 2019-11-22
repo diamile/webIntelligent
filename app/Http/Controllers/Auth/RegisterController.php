@@ -61,12 +61,13 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // 'lastName'=>['required', 'string', 'max:255'],
-            // 'address'=>['required','string','max:255'],
+            'lastName'=>['required', 'string', 'max:255'],
+            'address'=>['required','string','max:255'],
             'tel'=>['required','max:10'],
-            // 'postale'=>['required','string','max:5'],
+            'postale'=>['required','string','max:5'],
+            'commentaire'=>['required','string'],
           
-            // 'city'=>['required','string', 'max:20'],
+            'city'=>['required','string', 'max:20'],
         ]);
     }
 
@@ -84,11 +85,12 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                // 'lastName'=>$date['lastName'],
+                'lastName'=>$data['lastName'],
                 'phone'=>$data['tel'],
-                // 'adresse'=>$date['address'],
-                // 'postale'=>$date['postale'],
-                // 'ville'=>$date['city'],
+                'adresse'=>$data['address'],
+                'postale'=>$data['postale'],
+                'ville'=>$data['city'],
+                'commentaires'=>$data['commentaire']
                
             ]);
         
