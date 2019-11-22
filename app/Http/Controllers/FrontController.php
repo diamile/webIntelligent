@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
@@ -77,8 +82,40 @@ class FrontController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $rules = array(
+            'name'       => 'required',
+            'email'      => 'required|email',
+            'address'=> 'required|string|max:255',
+            
+        );
+
+       
+
+        $validator = Validator::make(Input::all(), $rules);
+
+    
+            
+            //recuperation des nouvelles données apres modification
+
+            
+
+            $user = User::find($id);
+
+            $user->name       = Input::get('name');
+            $user->email      = Input::get('email');
+            $user->password       = Input::get('password');
+            $user->postale       = Input::get('postale');
+            $user->phone      = Input::get('tel');
+            $user->ville       = Input::get('city');
+
+           
+            $user->save();
+
+            Session::flash('flash_message', 'Vos données  ont été bien modifié');
+         
+            return redirect('/client');
+    
+}
 
     /**
      * Remove the specified resource from storage.

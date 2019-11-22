@@ -16,37 +16,10 @@
                                
                            @foreach($users as $user)
                                  
-                           <td>
-                            {{$user->name}}
-                        </td>
-                        <td>
-                            {{$user->lastName}}
-                        </td>
-                        <td>
-                            {{$user->email}}
-                        </td>
-                        <td>
-                            {{$user->phone}}
-                        </td>
-
-                        <td>
-                            {{$user->adresse}}
-                        </td>
-
-                        <td>
-                            {{$user->postale}}
-                        </td>
-
-                        <td>
-                            {{$user->ville}}
-                        </td>
-
-                        <td>
-                            {{$user->commentaire}}
-                        </td>
-
+                    
                                     <div class="card-body">
-                                        <form method="POST" action="">
+                                        
+                                    <form method="POST" action="{{route('client.update',$user->id)}}">
                                             @csrf
                                             @method('PATCH')
                     
