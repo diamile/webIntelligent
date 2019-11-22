@@ -7,6 +7,15 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Events\Registered;
+
+
+
 
 class RegisterController extends Controller
 {
@@ -28,7 +37,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -52,6 +61,12 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'lastName'=>['required', 'string', 'max:255'],
+            // 'address'=>['required','string','max:255'],
+            'tel'=>['required','max:10'],
+            // 'postale'=>['required','string','max:5'],
+          
+            // 'city'=>['required','string', 'max:20'],
         ]);
     }
 
@@ -63,10 +78,40 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        //$this->redirectTo = '/login';
+
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                // 'lastName'=>$date['lastName'],
+                'phone'=>$data['tel'],
+                // 'adresse'=>$date['address'],
+                // 'postale'=>$date['postale'],
+                // 'ville'=>$date['city'],
+               
+            ]);
+        
+
+        
+      
     }
+
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+    }
+    
+           
+         
+        
+
+    
+
 }

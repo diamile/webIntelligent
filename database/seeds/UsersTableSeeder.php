@@ -14,8 +14,10 @@ class UsersTableSeeder extends Seeder
         DB::Table('users')->insert([
             'name' => 'Diamile',
             'email' => 'diamilesarr2006@gmail.com',
+            'phone'=>'0752823958',
             'password' => Hash::make('admin'),
-            'is_admin' => 1
+            'is_admin'=>1,
+            
         ]);
     }
 }
