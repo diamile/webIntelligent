@@ -17,9 +17,7 @@ class FrontController extends Controller
     {
         $users = User::where('id', Auth::id())->get();
 
-        dd($users);
-
-        return view('client.users');
+        return view('client.users',compact('users'));
     }
 
     /**
@@ -62,7 +60,12 @@ class FrontController extends Controller
      */
     public function edit($id)
     {
-        //
+        //$user=User::find($id);
+         $users = User::where('id', Auth::id())->get();
+
+         return view('client.edit',compact('users'));
+
+
     }
 
     /**

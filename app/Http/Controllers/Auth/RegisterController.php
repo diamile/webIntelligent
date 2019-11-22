@@ -66,7 +66,6 @@ class RegisterController extends Controller
             'tel'=>['required','max:10'],
             'postale'=>['required','string','max:5'],
             'commentaire'=>['required','string'],
-          
             'city'=>['required','string', 'max:20'],
         ]);
     }
@@ -95,8 +94,6 @@ class RegisterController extends Controller
             ]);
         
 
-        
-      
     }
 
 

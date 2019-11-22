@@ -1,23 +1,71 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <article class="container">
+        <section class="row">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            @include('client.partials.sidenav')
 
-                    hello amina
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    
+                    <div class="panel-body">
+                           
+                        <section class="container">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Email</th>
+                                    <th>Telephone</th>
+                                    <th>Adresse</th>
+                                    <th>C.postale</th>
+                                    <th>Ville</th>
+                                    <th>Commentaire</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($users as $user)
+
+                                    <tr>
+                                        <td>
+                                            {{$user->name}}
+                                        </td>
+                                        <td>
+                                            {{$user->lastName}}
+                                        </td>
+                                        <td>
+                                            {{$user->email}}
+                                        </td>
+                                        <td>
+                                            {{$user->phone}}
+                                        </td>
+
+                                        <td>
+                                            {{$user->adresse}}
+                                        </td>
+
+                                        <td>
+                                            {{$user->postale}}
+                                        </td>
+
+                                        <td>
+                                            {{$user->ville}}
+                                        </td>
+
+                                        <td>
+                                            {{$user->commentaire}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </section>
+    </article>
 @endsection
